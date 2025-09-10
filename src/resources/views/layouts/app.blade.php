@@ -9,7 +9,7 @@
 <body class="d-flex flex-column min-vh-100">
     {{-- Navbar --}}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
+        <div style="margin-left: 6rem;">
             <a class="navbar-brand" href="{{ url('/') }}">
                 {{ config('app.name', 'Demo App') }}
             </a>
