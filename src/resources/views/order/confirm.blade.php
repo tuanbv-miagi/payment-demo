@@ -39,7 +39,8 @@
                         </div>
 
                         <!-- Upload ảnh thanh toán -->
-                        <form action="#" method="post" enctype="multipart/form-data">
+                        <form id="myForm" action="{{ route('order.complete') }}" method="post" enctype="multipart/form-data">
+                            @csrf
                             <div class="mb-4">
                                 <label for="screenshot" class="form-label fw-bold">
                                     Tải ảnh xác nhận thanh toán
@@ -58,7 +59,7 @@
 
                             <!-- Nút hành động -->
                             <div class="d-flex justify-content-end">
-                                <a href="#" class="btn btn-secondary me-2">
+                                <a href="{{ route('order.payment') }}" class="btn btn-secondary me-2">
                                     <i class="bi bi-arrow-left"></i> Quay lại
                                 </a>
                                 <button type="submit" class="btn btn-success">
@@ -72,6 +73,44 @@
             </div>
         </div>
     </div>
+
+    <div id="loading" style="
+        display:none;
+        position:fixed;
+        top:0; left:0;
+        width:100%; height:100%;
+        background:rgba(255,255,255,0.8);
+        justify-content:center;
+        align-items:center;"
+    >
+        <lottie-player 
+            id="loadingAnim"
+            src="{{ asset('lotties/loading.json') }}"
+            background="transparent"
+            speed="1"
+            style="width: 20%; max-width: 200px; margin: 0 auto;"
+            autoplay>
+        </lottie-player>
+    </div>
+
+    <script>
+    const form = document.getElementById('myForm');
+    const loading = document.getElementById('loading');
+    const loadingAnim = document.getElementById('loadingAnim');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // chặn submit ngay
+        loading.style.display = 'flex'; // hiện overlay
+
+        // reset animation để chạy lại
+        loadingAnim.stop();
+        loadingAnim.play();
+
+        setTimeout(() => {
+            form.submit(); // sau 1s mới submit thật
+        }, 1000);
+    });
+    </script>
 
     <!-- Script preview ảnh -->
     <script>

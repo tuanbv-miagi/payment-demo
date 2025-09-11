@@ -15,7 +15,7 @@
                     </div>
                     <div class="card-body">
                         {{-- Bảng sản phẩm --}}
-                        <h5 class="mb-3">Sản phẩm</h5>
+                        <h5 class="mb-3">Chi tiết đơn hàng</h5>
                         <table class="table table-bordered align-middle">
                             <thead class="table-light">
                                 <tr>
@@ -65,13 +65,13 @@
                     </div>
 
                     <div class="card-footer text-end">
+                        <a href="{{ route('order.list') }}" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> Quay lại giỏ hàng
+                        </a>
+
                         <button type="submit" class="btn btn-success">
                             <i class="bi bi-credit-card"></i> Xác nhận & Thanh toán
                         </button>
-
-                        <a href="#" class="btn btn-secondary">
-                            <i class="bi bi-arrow-left"></i> Quay lại giỏ hàng
-                        </a>
                     </div>
                 </div>
             </form>
