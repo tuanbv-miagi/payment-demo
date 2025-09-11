@@ -12,15 +12,14 @@
             'bankName' => $bankName,
             'oderId' => '44444'
         ])
-    </div>
-
-    <div class="d-flex justify-content-end" style="width: 80%; margin-top: 20px;">
-        <a href="#" class="btn btn-secondary me-2">
-            <i class="bi bi-arrow-left"></i> Quay lại
-        </a>
-        <button type="submit" class="btn btn-success">
-            <i class="bi bi-check-circle"></i> Tiếp tục
-        </button>
+        <div style="width: 80%; max-width: 820px; margin: 2% auto; text-align: right;">
+            <a href="{{ route('order.index') }}" class="btn btn-secondary me-2">
+                <i class="bi bi-arrow-left"></i> Quay lại
+            </a>
+            <a href="{{ route('order.confirm') }}" class="btn btn-success">
+                <i class="bi bi-check-circle"></i> Tiếp tục
+            </a>
+        </div>
     </div>
 
 @endsection

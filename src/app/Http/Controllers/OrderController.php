@@ -16,6 +16,15 @@ class OrderController extends Controller
     }
 
     /**
+     * Summary of list
+     * @return void
+     */
+    public function list(): View
+    {
+        return view('order.list');
+    }
+
+    /**
      * Infor order page
      *
      * @return View
